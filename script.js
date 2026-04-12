@@ -30,7 +30,7 @@ clique.addEventListener("click", function () {
     alert("!!!");
 });
 
-/* fundo vira ouro */
+/* fundo muda */
 document.querySelector("body").onclick= function() {
   this.style.backgroundImage = "url('https://media1.tenor.com/m/B8RqZAbFJUwAAAAd/minecraft-calm.gif')";
 
