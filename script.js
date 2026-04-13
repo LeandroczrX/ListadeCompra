@@ -56,3 +56,12 @@ document.body.onclick = function () {
 document.querySelector("input").onclick = function () {
   this.style.backgroundImage = "url('https://previews.123rf.com/images/corbendallas/corbendallas1811/corbendallas181100577/127490370-light-pink-square-mosaic-tiles-background-background-with-abstract-polygonal-pixels-random-tiles.jpg')";
 };
+
+
+//musica no input
+
+let som = new Audio("https://www.myinstants.com/pt/instant/minecraft-xp-sound-1-30960/?utm_source=copy&utm_medium=share");
+
+clique.addEventListener("click", function () {
+  som.play(); 
+});
