@@ -30,6 +30,11 @@ function add() {
 function remover(li) {
   li.remove();
   if (count > 0) count--;
+  
+  //som quando tira algo
+ let somRemover = new Audio("https://www.myinstants.com/media/sounds/levelup.mp3");
+somRemover.play();
+
   document.getElementById('contador').textContent = count;
 }
 
@@ -59,9 +64,9 @@ document.querySelector("input").onclick = function () {
 
 
 //musica no input
+let click = document.querySelector("input");
+let som = new Audio("https://lambda.vgmtreasurechest.com/soundtracks/minecraft/opiwjgbq/1-03.%20Subwoofer%20Lullaby.mp3");
 
-let som = new Audio("https://www.myinstants.com/pt/instant/minecraft-xp-sound-1-30960/?utm_source=copy&utm_medium=share");
-
-clique.addEventListener("click", function () {
+click.addEventListener("click", function () {
   som.play(); 
 });
