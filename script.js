@@ -3,39 +3,56 @@ let count = 0;
 function add() {
   let input = document.getElementById('i');
   let texto = input.value.trim();
-  if (texto !== "") {
-    count++;
-    document.getElementById('contador').textContent = count;
-    
-    let li = document.createElement('li');
-    li.innerHTML = texto + '<button onclick="remover(this.parentElement)">x</button>';
-    
-    let lista = document.getElementById('lista');
-    lista.appendChild(li);
-    
-    input.value = '';
-    input.focus();
-  }
+
+  if (texto === "") return;
+
+  count++;
+  document.getElementById('contador').textContent = count;
+
+  let li = document.createElement('li');
+  li.textContent = texto;
+
+  let btn = document.createElement('button');
+  btn.textContent = "x";
+
+  btn.onclick = function () {
+    remover(li);
+  };
+
+  li.appendChild(btn);
+  document.getElementById('lista').appendChild(li);
+
+  input.value = '';
+  input.focus();
 }
+
 
 function remover(li) {
   li.remove();
-  count--;
+  if (count > 0) count--;
   document.getElementById('contador').textContent = count;
 }
- 
- /* alerta */
-let clique = document.getElementById("i");
-clique.addEventListener("click", function () {
-    alert("!!!");
+
+
+
+// alerta
+
+document.getElementById("i").addEventListener("click", function () {
+  alert("!!!");
 });
 
-/* fundo muda */
-document.querySelector("body").onclick= function() {
-  this.style.backgroundImage = "url('https://media1.tenor.com/m/B8RqZAbFJUwAAAAd/minecraft-calm.gif')";
 
-}
-/* fundo do input muda*/
-document.querySelector("input").onclick= function() {
+
+// muda fundo da página
+
+document.body.onclick = function () {
+  this.style.backgroundImage = "url('https://media1.tenor.com/m/B8RqZAbFJUwAAAAd/minecraft-calm.gif')";
+};
+
+
+
+// muda fundo do input
+
+document.querySelector("input").onclick = function () {
   this.style.backgroundImage = "url('https://previews.123rf.com/images/corbendallas/corbendallas1811/corbendallas181100577/127490370-light-pink-square-mosaic-tiles-background-background-with-abstract-polygonal-pixels-random-tiles.jpg')";
-}
+};
