@@ -6,6 +6,7 @@ function add() {
 
   if (texto === "") return;
 
+
   count++;
   document.getElementById('contador').textContent = count;
 
